@@ -1,5 +1,6 @@
 {
   "name": "@dsajs/monorepo",
+  "exports": "./index.js",
   "workspace": [
     "./lib"
   ],
