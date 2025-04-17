@@ -1,0 +1,24 @@
+# Sum nested arrays - recursion
+
+## Description
+
+You are given a nested array of integers. Your task is to return the sum of all the integers in the array, including those in nested arrays.
+The array can be nested to any depth, and it may contain other arrays as well as integers. The integers can be positive or negative.
+
+## Example
+
+```javascript
+sumNestedArray([1, 2, [3, 4], [5, [6, 7]]]); // returns 28
+sumNestedArray([1, 2, [3, 4], [5, [6, -7]]]); // returns 10
+sumNestedArray([1, 2, [3, 4], [5, [6, -7]], -8]); // returns 2
+```
+
+## Constraints
+
+- The input array will always be a valid nested array of integers.
+- The input array will not be empty.
+- The integers in the array can be positive or negative.
+
+## Task
+
+Write a function `sumNestedArray(arr)` that takes a nested array of integers as input and returns the sum of all the integers in the array, including those in nested arrays.
