@@ -32,9 +32,11 @@
       "singleQuote": false,
       "lineWidth": 90,
       "semiColons": true,
-      "proseWrap": "always"
+      "proseWrap": "always",
+      "useTabs": false
     },
     "singleQuote": false,
+    "indentWidth": 2,
     "exclude": [
       "node_modules",
       "dist",
