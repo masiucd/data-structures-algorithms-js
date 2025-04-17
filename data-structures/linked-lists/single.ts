@@ -54,10 +54,15 @@ export class List implements ListInterface {
 		this.#length += 1;
 	}
 	remove(value: number): void {
-		throw new Error("Method not implemented.");
+		// TODO
 	}
 	find(value: number): Node | null {
-		throw new Error("Method not implemented.");
+		let current = this.#head;
+		while (current !== null) {
+			if (current.value === value) return current;
+			current = current.next;
+		}
+		return current;
 	}
 	isEmpty(): boolean {
 		return this.#head === null;
@@ -66,10 +71,17 @@ export class List implements ListInterface {
 		return this.#length;
 	}
 	clear(): void {
-		throw new Error("Method not implemented.");
+		this.#head = null;
+		this.#length = 0;
 	}
 	toArray(): number[] {
-		throw new Error("Method not implemented.");
+		let result = [];
+		let current = this.#head;
+		while (current !== null) {
+			result.push(current.value);
+			current = current.next;
+		}
+		return result;
 	}
 	toString(): string {
 		let current = this.#head;
