@@ -1,0 +1,15 @@
+# Count me
+
+## Description
+
+Given a string of integers, count how many times that integer repeats itself, then return a string showing the count and the integer.
+
+## Example
+
+```javascript
+countMe("1123"); // "2 1, 1 2, 1 3"
+
+countMe("112233"); // "2 1, 2 2, 2 3"
+```
+
+## Input
