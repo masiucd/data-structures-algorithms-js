@@ -10,7 +10,7 @@ class Node {
 interface ListInterface {
 	add(value: number): void;
 	prepend(value: number): void;
-	remove(value: number): void;
+	remove(value: number): boolean;
 	find(value: number): Node | null;
 	isEmpty(): boolean;
 	size(): number;
@@ -53,8 +53,35 @@ export class List implements ListInterface {
 		}
 		this.#length += 1;
 	}
-	remove(value: number): void {
-		// TODO
+	remove(value: number): boolean {
+		if (!this.#head) return false;
+		if (this.#head.value === value) {
+			let current = this.#head;
+			this.#head = this.#head.next;
+			current.next = null;
+			this.#length -= 1;
+			return true;
+		}
+		let nodeToRemove: Node | null = null;
+		let prevNode: Node | null = this.#head;
+		while (prevNode?.next !== null) {
+			if (prevNode.next.value === value) {
+				nodeToRemove = prevNode.next;
+				break;
+			}
+			prevNode = prevNode.next;
+		}
+		let nextNode = nodeToRemove?.next;
+		if (prevNode && nodeToRemove && nextNode) {
+			prevNode.next = nextNode;
+			nodeToRemove.next = null;
+		} // nodeToRemove is that last node
+		else if (prevNode && nodeToRemove) {
+			prevNode.next = null;
+			nodeToRemove.next = null;
+		}
+		this.#length -= 1;
+		return true;
 	}
 	find(value: number): Node | null {
 		let current = this.#head;
